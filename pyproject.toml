@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pyqsim"
+version = "0.0.1"
+description = ""
+authors = ["Jorge Pulido <jorge.pulido@basf.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.4"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
