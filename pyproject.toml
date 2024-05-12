@@ -2,14 +2,21 @@
 name = "pyqsim"
 version = "0.0.1"
 description = ""
-authors = ["Jorge Pulido <jorge.pulido@basf.com>"]
+authors = ["Jorge Pulido <jorge.pulido@hotmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 numpy = "^1.26.4"
 loguru = "^0.7.2"
+jupyter = "^1.0.0"
 
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.5.1"
+poetry-setup = "^0.3.6"
+poetry = "^1.8.3"
+jupyter = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]

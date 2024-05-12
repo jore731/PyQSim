@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (fotos)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10.12 WSL (RGQ-DE-distro): (/c/Users/PulidoJ/Repositories/MUCC/PyQSim/.venv/bin/python)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (PyQSim)" project-jdk-type="Python SDK" />
 </project>
