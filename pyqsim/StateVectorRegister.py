@@ -1,10 +1,8 @@
-from typing import Union, Set, List
+from typing import Union, List
 
 import numpy as np
-from loguru import logger
 
 from . import validators
-from .compute.swap import obtain_swaps, compute_swap_block
 from .exceptions import RegistrySizeError
 from .gates import Gate
 from .utils import validate

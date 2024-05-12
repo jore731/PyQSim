@@ -44,8 +44,8 @@ class SWAP(Gate):
         super().__init__(qubit_0, qubit_1)
 
     def assign_qubits(self, qubits):
-        self.targets = list(qubits)
-        self.qubits = list(qubits)
+        self.targets = list(range(self.matrix.shape[0]))
+        self.qubits = list(range(self.matrix.shape[0]))
 
 
 @lru_cache(maxsize=None)

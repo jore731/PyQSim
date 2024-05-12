@@ -24,7 +24,7 @@ class TestCircuit(unittest.TestCase):
         self.circuit = Circuit(self.mock_register)
 
     def test_init(self):
-        self.assertEqual(self.circuit.registry, self.mock_register)
+        self.assertEqual(self.circuit.register, self.mock_register)
 
     def test_h(self):
         self.circuit.h(1)

@@ -6,11 +6,11 @@ from . import StateVectorRegister
 
 
 class Circuit:
-    registry: StateVectorRegister
+    register: StateVectorRegister
     gates: List
 
-    def __init__(self, registry: StateVectorRegister):
-        self.registry = registry
+    def __init__(self, register: StateVectorRegister):
+        self.register = register
         self.gates = []
 
     def h(self, *qubits: int):
@@ -30,14 +30,14 @@ class Circuit:
             self.gates.append(gate)
         else:
             desired_state = gate.controls + gate.targets
-            desired_state += [qubit for qubit in self.registry.qubits if qubit not in desired_state]
-            swaps = obtain_swaps(tuple(self.registry.qubits), tuple(desired_state))
+            desired_state += [qubit for qubit in self.register.qubits if qubit not in desired_state]
+            swaps = obtain_swaps(tuple(self.register.qubits), tuple(desired_state))
             reverse_swaps = swaps[::-1]
-            self.gates += [SWAP(qubit_0, qubit_1, self.registry.num_qubits) for qubit_0, qubit_1 in swaps]
+            self.gates += [SWAP(qubit_0, qubit_1, self.register.num_qubits) for qubit_0, qubit_1 in swaps]
             self.gates.append(gate)
-            self.gates += [SWAP(qubit_0, qubit_1, self.registry.num_qubits) for qubit_0, qubit_1 in reverse_swaps]
+            self.gates += [SWAP(qubit_0, qubit_1, self.register.num_qubits) for qubit_0, qubit_1 in reverse_swaps]
 
     def run(self):
         for gate in self.gates:
-            self.registry.apply_gate(gate)
-        return self.registry
+            self.register.apply_gate(gate)
+        return self.register

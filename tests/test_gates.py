@@ -25,16 +25,18 @@ class TestGates(unittest.TestCase):
         self.assertEqual(cx.matrix.size, 16)
 
     def test_SWAP(self):
-        swap_1023 = gates.SWAP(0, 1, 2)
+        register_size = 2
+        swap_1023 = gates.SWAP(0, 1, register_size)
 
         self.assertEqual(swap_1023.gate_size, 2)
         self.assertEqual(swap_1023.controls, [])
-        self.assertEqual(swap_1023.targets, [0, 1])
+        self.assertEqual(swap_1023.targets, list(range(1 << register_size)))
         self.assertEqual(swap_1023.matrix.tolist(),
                          [[True, False, False, False],
                           [False, False, True, False],
                           [False, True, False, False],
                           [False, False, False, True]])
+
 
 if __name__ == '__main__':
     unittest.main()
